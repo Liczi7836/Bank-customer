@@ -4,8 +4,10 @@ import com.customer.controller.CustomerNotFoundException;
 import com.customer.domain.Customer;
 import com.customer.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
+@RequestMapping
 public class DbService {
 
     private CustomerRepository customerRepository;

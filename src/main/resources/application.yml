@@ -4,15 +4,15 @@ spring:
   profiles:
     active: production
   datasource:
-    url: ${accounts.datasource.url}
-    username: ${accounts.datasource.username}
-    password: ${accounts.datasource.password}
+    url: ${customer.datasource.url}
+    username: ${customer.datasource.username}
+    password: ${customer.datasource.password}
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
-    show-sql: ${accounts.jpa.showsql}
-    database: ${accounts.jpa.database}
+    show-sql: ${customer.jpa.showsql}
+    database: ${customer.jpa.database}
     hibernate:
-      ddl-auto: ${accounts.jpa.hibernate.ddl-auto}
+      ddl-auto: ${customer.jpa.hibernate.ddl-auto}
 
 management:
   endpoint:
@@ -22,3 +22,6 @@ management:
     web:
       exposure:
         include: '*'
+
+eureka:
+  client: ${eureka-client}

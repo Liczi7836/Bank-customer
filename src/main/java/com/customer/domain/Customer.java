@@ -4,6 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
+@NamedNativeQuery(
+        name = "Customer.retrieveById",
+        query = "SELECT * FROM customer"
+                + " where customer_id = :ID",
+        resultClass = Customer.class
+)
 public class Customer {
 
     private Long id;

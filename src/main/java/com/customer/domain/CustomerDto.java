@@ -7,12 +7,7 @@ import javax.persistence.NamedNativeQuery;
 
 @Getter
 @Setter
-@NamedNativeQuery(
-        name = "Customer.retrieveById",
-        query = "SELECT customer_id, first_name, last_name FROM customer"
-        + " where customer_id = :ID",
-        resultClass = Customer.class
-)
+
 public class CustomerDto {
 
     private Long id;

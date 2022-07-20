@@ -31,7 +31,7 @@ public class Customer {
 
 
     public void setCustomerId(Long id) {
-        this.customerId = customerId;
+        this.customerId = id;
     }
 
 

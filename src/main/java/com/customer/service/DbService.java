@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class DbService {
 
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     public Customer getCustomerById(Long id) throws CustomerNotFoundException{
-        return customerRepository.findById(id).orElseThrow(CustomerNotFoundException::new);
+        return customerRepository.findByCustomerId(id).orElseThrow(CustomerNotFoundException::new);
     }
 
 }

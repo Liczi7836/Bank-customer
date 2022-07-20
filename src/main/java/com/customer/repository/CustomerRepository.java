@@ -11,7 +11,6 @@ import java.util.Optional;
 @Transactional
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
-    @Override
-    Optional<Customer> findById(Long id);
+    Optional<Customer> findByCustomerId(Long id);
 
 }

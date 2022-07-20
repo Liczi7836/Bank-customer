@@ -7,7 +7,9 @@ import com.customer.mapper.CustomerMapper;
 import com.customer.repository.CustomerRepository;
 import com.customer.service.DbService;
 import com.customer.service.ProductService;
+import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +25,13 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
 
+    @Autowired
     private DbService dbService;
+
+    @Autowired
     private CustomerMapper customerMapper;
+
+    @Autowired
     private ProductService productService;
 
     @GetMapping(value = "/customer/{id}")

@@ -1,16 +1,17 @@
 package com.customer.repository;
 
 import com.customer.domain.Customer;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Repository
+@Transactional
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
-    @Query
-    Optional<Customer> retrieveById(@Param("ID") Long id);
+    @Override
+    Optional<Customer> findById(Long id);
+
 }

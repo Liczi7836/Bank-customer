@@ -3,19 +3,17 @@ package com.customer.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.NamedNativeQuery;
-
 @Getter
 @Setter
 
 public class CustomerDto {
 
-    private Long id;
+    private Long customerId;
     private String firstName;
     private String lastName;
 
-    public CustomerDto(Long id, String firstName, String lastName) {
-        this.id = id;
+    public CustomerDto(Long customerId, String firstName, String lastName) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
     }

@@ -39,7 +39,7 @@ public class CustomerController {
         List<AccountDto> customerAccounts = productService.findCustomerAccounts(customerId);
 
         return GetCustomerProductsResponse.builder()
-                .customerId(customerDto.getId())
+                .customerId(customerDto.getCustomerId())
                 .fullName(customerDto.getFirstName() + " " + customerDto.getLastName())
                 .accounts(customerAccounts)
                 .build();

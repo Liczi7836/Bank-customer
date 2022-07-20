@@ -1,23 +1,20 @@
 package com.customer.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
-@NamedNativeQuery(
-        name = "Customer.retrieveById",
-        query = "SELECT * FROM customer"
-                + " where customer_id = :ID",
-        resultClass = Customer.class
-)
 public class Customer {
 
-    private Long id;
+    private Long customerId;
     private String firstName;
     private String lastName;
+    private List<Account> accounts = new ArrayList<>();
 
-    public Customer(Long id, String firstName, String lastName) {
-        this.id = id;
+    public Customer(Long customerId, String firstName, String lastName) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -28,13 +25,13 @@ public class Customer {
 
     @Id
     @Column(name = "customerId")
-    public Long getId(){
-        return id;
+    public Long getCustomerId(){
+        return customerId;
     }
 
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCustomerId(Long id) {
+        this.customerId = customerId;
     }
 
 

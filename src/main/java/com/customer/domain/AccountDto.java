@@ -1,12 +1,8 @@
 package com.customer.domain;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
-@NoArgsConstructor
 public class AccountDto {
 
     private Long id;
@@ -18,4 +14,12 @@ public class AccountDto {
     private double availableFunds;
 
     private Customer customer;
+
+    public AccountDto(Long id, String nrb, String currency, double availableFunds, Customer customer) {
+        this.id = id;
+        this.nrb = nrb;
+        this.currency = currency;
+        this.availableFunds = availableFunds;
+        this.customer = customer;
+    }
 }

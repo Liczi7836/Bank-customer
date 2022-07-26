@@ -1,6 +1,7 @@
 package com.customer.connector.response;
 
 import com.customer.domain.AccountDto;
+import com.customer.domain.CardsDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +16,6 @@ import java.util.List;
 public class GetCustomerProductsResponse {
     private Long customerId;
     private String fullName;
-    private List<AccountDto> accounts;
+    private AccountDto accounts;
+    private CardsDto cardsDto;
 }
